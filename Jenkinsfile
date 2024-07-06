@@ -80,10 +80,10 @@ pipeline {
 
     stage('Update Image Tag in GitOps') {
       steps {
-         checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[ credentialsId: 'git-ssh', url: 'git@github.com:udemy-dev-withK8s-AWS-codedecode/deployment-folder.git']])
+         checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[ credentialsId: 'git-ssh', url: 'git@github.com:knpragash/deployment-folder.git']])
         script {
        sh '''
-          sed -i "s/image:.*/image: knpragash\\/docker-jenkins-integration:${VERSION}/" aws/restaurant-manifest.yml
+          sed -i "s/image:.*/image: knpragash\\/docker-jenkins-integration:${VERSION}/" aws/gitlab-jenkins-manifest.yml
         '''
           sh 'git checkout master'
           sh 'git add .'
