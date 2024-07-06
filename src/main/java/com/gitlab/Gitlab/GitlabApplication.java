@@ -8,7 +8,7 @@ public class GitlabApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GitlabApplication.class, args);
-		System.out.println("Charm........");
+		System.out.println("Charm........nn");
 	}
 
 }
